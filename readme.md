@@ -8,7 +8,5 @@
 # log
 - 13.12.2023
     - [сириус 2022. 10 класс. группа 1](https://tasks.olimpiada.ru/upload/files/tasks/73/2022/task-info-10-gr1-sch-sirius-22-23.pdf)
-        - [first](https://github.com/L0puh/prepare_for_competition/frog_and_grasshopper.py)
-
-    
-
+        - [frog_and_grasshopper.py](https://github.com/L0puh/prepare_for_competitions/blob/master/frog_and_grasshopper.py)
+        - [central_square.py](https://github.com/L0puh/prepare_for_competitions/blob/master/central_square.py)
