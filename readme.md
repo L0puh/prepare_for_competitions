@@ -23,3 +23,5 @@
   - [rectangle.py](https://github.com/L0puh/prepare_for_competitions/blob/master/rectangle.py)
             finds how many cuts (vertical and horizontal) needed to be done to come 
             up with the m amount of rectangles
+### reg_olymp_2022 day 1 
+    - [change_and_move.py](https://github.com/L0puh/prepare_for_competitions/blob/master/change_and_move.py)
