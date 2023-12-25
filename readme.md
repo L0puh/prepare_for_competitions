@@ -24,10 +24,10 @@
             finds how many cuts (vertical and horizontal) needed to be done to come 
             up with the m amount of rectangles
 ### reg_olymp_2022 day 1 
-    - [change_and_move.py](https://github.com/L0puh/prepare_for_competitions/blob/master/change_and_move.py)
-    - [jumping_robot.py](https://github.com/L0puh/prepare_for_competitions/blob/master/jumping_robot.py)
-    - [palindorms.cpp](https://github.com/L0puh/prepare_for_competitions/blob/master/palindroms.cpp)
-        - [sub for palindroms(find palidrom)](https://github.com/L0puh/prepare_for_competitions/blob/master/sub_palindrom.cpp)
+- [change_and_move.py](https://github.com/L0puh/prepare_for_competitions/blob/master/change_and_move.py)
+- [jumping_robot.py](https://github.com/L0puh/prepare_for_competitions/blob/master/jumping_robot.py)
+- [palindorms.cpp](https://github.com/L0puh/prepare_for_competitions/blob/master/palindroms.cpp)
+  - [sub for palindroms(find palidrom)](https://github.com/L0puh/prepare_for_competitions/blob/master/sub_palindrom.cpp)
 
 # DIJKSTRA'S ALGORITHM
 ### INPUT:
