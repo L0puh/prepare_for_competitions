@@ -26,11 +26,13 @@
 ### reg_olymp_2022 day 1 
     - [change_and_move.py](https://github.com/L0puh/prepare_for_competitions/blob/master/change_and_move.py)
     - [jumping_robot.py](https://github.com/L0puh/prepare_for_competitions/blob/master/jumping_robot.py)
+    - [palindorms.cpp](https://github.com/L0puh/prepare_for_competitions/blob/master/palindroms.cpp)
+        - [sub for palindroms(find palidrom)](https://github.com/L0puh/prepare_for_competitions/blob/master/sub_palindrom.cpp)
 
 # DIJKSTRA'S ALGORITHM
 ### INPUT:
 ![](https://media.geeksforgeeks.org/wp-content/uploads/20230224110301/dijkstras1.png)
 ### 
 - [dijkstra.cpp](https://github.com/L0puh/prepare_for_competitions/blob/master/dijkstra.cpp)
-
+    
 
