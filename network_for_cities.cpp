@@ -23,28 +23,34 @@ void print_map(map m){
         printf("%d->%d(%d)\n", i.F, i.S.number, i.S.cost);
     }
 }
-pair max_angel(map m, int n){
-    int j=2, max=0, max_j;
+int max_angel(map m, int n, int *max){
+    int j=2, max_j;
     for(; j != n; j++){
-        if (m.count(j) > max){
-            max = m.count(j);
+        if (m.count(j) > *max){
+            *max = m.count(j);
             max_j = j;
         }
     }
-    return {max_j, max};
+    return max_j;
 }
 bool is_exists(std::vector<int> p, int i){
-    for(auto v: p) if( v == i) return true;
+    for(auto v: p) {
+        if( v == i) return true;
+    }
     return false;
 }
-int min_cost(std::vector<int> p, map::iterator m, map::iterator end){
+int min_cost( map::iterator b, int end, std::vector<int> *done, int m){
     int min = INT_MAX; 
-    if(!is_exists(p, m->F)){
-        for(; m != end; m++){
-            if (m->S.cost > min) 
-                min = m->S.cost;
+    int a = b->F;
+    for(int i = 1; i <= end; i++){
+        if (is_exists(*done, b->S.cost)) continue;
+        printf("process... n: %d cost: %d from %d\n", b->S.number, b->S.cost, a);
+        if (b->S.cost < min){
+            min = b->S.cost;
         }
-    }
+        b++;
+    }  
+    done->push_back(min);
     return min;
 }
 int main(){
@@ -55,28 +61,34 @@ int main(){
         std::cin >> x >> y;
         cities.insert({x, {i, y}});
     }
-      
-    pair m = max_angel(cities, n);
-    City city = cities.find(m.F)->second;
-    auto cnt = cities.find(m.F);
-    int ans = m.S, cost=city.cost;
-
-    for(; cnt != cities.end(); cnt++){
+    int max = 0; 
+    int m = max_angel(cities, n, &max);
+    City city = cities.find(m-1)->second;
+    auto cnt = cities.find(m);
+    int ans = max + 1, cost=city.cost;
+    for(; cnt != cities.end() ; cnt++){
+        printf("n: %d cost %d \n", cnt->S.number, cnt->S.cost);
         cost += cnt->S.cost;
     }
-    std::vector<int> processed = {m.F};
-
-    // Djkstra algorithm??
-    /* while(ans <= k){ */
-        for (int i = 1; i!= n; i++){
-            if (i == m.F) continue;
-            cost += min_cost(processed, cities.find(i), cities.find(i+1));
-            processed.push_back(i);
-            ans++;
+    printf("MAX CITY: %d cost %d\n", m, cnt->S.cost);
+    if (y == 0) {
+        printf("%d %d\n", ans+1, 0);
+        return 0;    
+    } 
+    std::vector<int> done = {cnt->F};
+    int c = 1, prev = -1;
+    while (c < k){
+        for(int i = 1; i != n-1; i++){
+            auto node = cities.find(i);
+            if (node->F == m) continue;
+            if (cities.count(i) > 0){
+                prev = min_cost(node, cities.count(i), &done, prev);
+                cost+=prev;
+            }
         }
-    /* } */
+        c++;
+    }
 
-    printf("%d %d\n", ans, cost);
-    /* print_map(cities); */
+    printf("%d %d\n", ans+c-1, cost);
 }
 

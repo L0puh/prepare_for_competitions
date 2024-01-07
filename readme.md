@@ -1,5 +1,8 @@
 - start: 13.12.23
-- end: ???
+- end: NEVER
+
+# TODO:
+- find all paths for NxN squre when you can move any direction and must visit all the cells 
 
 # links:
 - [Всероссийская олимпиада по информатике, задания](https://www.olimpiada.ru/activity/73/tasks/2021?class=10)
