@@ -2,8 +2,6 @@
 #include <iostream>
 #include <vector>
 
-
-
 std::vector<int> sum(std::vector<int> p1, std::vector<int> p2){
     std::vector<int> s(p1.size());
     for (int i = 0; i != p2.size(); i++){
