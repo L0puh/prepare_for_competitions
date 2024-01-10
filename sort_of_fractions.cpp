@@ -65,9 +65,7 @@ int main(){
             frac.push_back(shorten({n1[i], n2[j]})); // really slow...
     }
 
-    //TODO: when we need only 100th pos we don't need to sort
-    //everything essentially, we can take only to 100 (100 is
-    //a position for pivot)
+    //TODO: 
     /* if (q == 1 and c[q] < 100){ sort_only_lower(100) }; */
 
     frac = sort(frac);

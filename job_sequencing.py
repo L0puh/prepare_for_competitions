@@ -40,7 +40,7 @@ jobs= [['a', 2, 100],  # Job Array
 
 
 def main():
-    # actually don't work properly...
+    #FIXME
     jobs.sort(key=lambda x: x[2], reverse=True) #sort based on profit 
                                                 # decresed 
     a = max(jobs, key=lambda x: x[1])[1] # maximum deadline (size

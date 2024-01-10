@@ -14,12 +14,13 @@ def main(s):
     
     while m < s:
         for i in reversed(a):
-            #finds always THE MAX result
+            # finds always the max result
             if i+m <= s:
                 sol.append(i)
                 m+=i
-                break #that's why you need the break
-                      # cuz otherwise it gets smaller ones too
+                break # you need the break
+                      # cuz otherwise it grabs
+                      # smaller ones too
     return sol 
 
 def solution(s):

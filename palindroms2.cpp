@@ -1,11 +1,4 @@
-/*
-does not actually
-work.
-maybe i'll refactor it?
-or maybe not.
-im already tired from this stuff
-to be honest with you
-*/
+/*FIXME*/
 
 
 #include <iostream>

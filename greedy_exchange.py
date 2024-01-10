@@ -1,12 +1,13 @@
 """
-Problem: You have to make a change of an amount using the smallest possible number of coins.
+Problem: You have to make a change of an 
+amount using the smallest possible number of coins.
 
+(using greedy)
 Amount: $18
 Available coins are
   $5 coin
   $2 coin
   $1 coin
-There is no limit to the number of each coin you can use.
 
 -> 5+5+5+2+1 = 18
 
