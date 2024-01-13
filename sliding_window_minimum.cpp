@@ -17,14 +17,6 @@ std::vector<int> array = {2, 1, 4, 5, 3, 4, 1, 2};
 */
 
 
-void print_stack(std::stack<int> st){
-   size_t sz = st.size();
-   for (; sz >0; sz--){
-      printf("%d ", st.top());
-      st.pop();
-   }
-   putchar('\n');
-}
 
 
 int main()

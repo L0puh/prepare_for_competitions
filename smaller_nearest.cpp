@@ -1,19 +1,7 @@
 #include <bits/stdc++.h>
-#include <stack>
-#include <vector>
 
+#include "utils.h"
 std::vector<int> array = {1, 6, 4, 10, 2, 5, 3};
-
-
-void print_stack(std::stack<int> temp){
-   int size = temp.size();
-   printf("STACK: ");
-   for (int i =0; i!= size; i++){
-      printf("%d ", temp.top());
-      temp.pop();
-   }
-   putchar('\n');
-}
 
 int main() {
    int start = 0;

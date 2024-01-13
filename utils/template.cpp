@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <cstdint>
 
 // g++ -std=c+11 -02 -Wall {name} - compile wich 
 
@@ -109,4 +110,58 @@ int main() {
     std::set<int>::iterator it = s1.find(3);
     if (it == s1.end()) {}          // element was not found
     return 0;
+    /***************************************************BITWISES******************************************************/
+
+    int8_t z = 2; // 000 010 
+    // counts the num of zeroes at the begining of the number 
+    // **** **-> 6  (for 1 byte)
+    // 0000 0010 
+    cout << __builtin_clz(z) << "\n";
+    // counts the num of zeroes at the end of the number 
+    //         * -> 1
+    // 0000 0010 
+    cout << __builtin_ctz(z) << "\n";
+    // counts the num of ones in the number
+    //        *  -> 1
+    // 0000 0010
+    cout << __builtin_popcount(z) << "\n";
+    // 0 when nums of ones is odd 
+    // 1 when even (for 1 of ones is 1)
+    cout << __builtin_parity(z) << "\n";
+
+    /***************************************************GRAPHS******************************************************/
+   
+    // adjacency list 
+    int N = 3;
+    vector<int> adj[N]; // 
+    adj[1].push_back(2); // 1 -> 2 
+    adj[2].push_back(1); // 1 <-> 2
+    vector<pair<int, int>> weights[N]; // graph wiht weights 
+    for (auto& u: adj[1]){
+       // process all paths from node 1
+    }
+
+    // adjacency matrix (n^2) 
+    int M=3;
+    int matrix[N][M];
+    matrix[1][2] = 1; // 1 -> 2 
+    matrix[1][2] = 3; // 1 -> 2 has a weigth 
+
+    // edge list
+    vector<pair<int, int>> edges;
+    edges.push_back({1, 2}); // 1 -> 2
+    vector<tuple<int, int, int>> edges_weighted;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

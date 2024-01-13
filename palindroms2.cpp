@@ -3,14 +3,12 @@
 
 #include <iostream>
 #include <vector>
+#include "utils.h"
 
-void print_vector(std::vector<int>::iterator b,
-                  std::vector<int>::iterator e);
 struct pos{
     int b;
     int e;
 };
-
 
 
 
