@@ -1,23 +1,13 @@
 #include <bits/stdc++.h>
-#include <queue>
-#define weight second 
 
-std::vector<std::pair<int, int>> graph[] = { //FIXME
-   {1, {2, 2}},
-   {1, {3, 4}},
-   {2, {3, 3}},
-   {3, {4, 7}},
+std::vector<int> graph[] = { 
+   {1, 2}, // 0 -> 1, 2
+   {0},    // 1 -> 0
+   {3},    // 2 -> 3
+   {4, 2}  // 3 -> 4, 2
 };
-const int N = sizeof(graph) / sizeof(graph[0]);
-bool visited[N];
-int  distance[N];
+const int N = (sizeof(graph) / sizeof(graph[0])) * 2;
 
-void print_distances(){
-   for (int i = 0; i != N; i++){
-      printf("%d ", distance[i]);
-   }
-   putchar('\n');
-}
 void print_queue(std::queue<int> q){
    int sz = q.size();
    for (int i=0; i!=sz; i++){
@@ -27,21 +17,20 @@ void print_queue(std::queue<int> q){
    putchar('\n');
 }
 int main(){
+   bool visited[N];
+   std::fill(visited, visited+N, 0);
    std::queue<int> q; 
    q.push(0);
    while (!q.empty()){
-      int p = q.front();
-      q.pop();
-      if (visited[p]) continue;
-      distance[p] = graph[p][0].second;
-      for(const auto& n: graph[p]){
-         if (n.first == p) continue;
-         printf("%d -> %d\n", p, n.first);
-         q.push(n.first);
+      int node = q.front(); q.pop();
+      if (visited[node]) continue;
+      for(auto& n: graph[node]){
+         printf("%d -> %d\n", node, n);
+         q.push(n);
       }
-      visited[p] = true;
+      visited[node] = true;
+
    }
-   print_distances();   
    return 0;
 }
 
