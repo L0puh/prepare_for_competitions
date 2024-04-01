@@ -3,21 +3,18 @@
 int main() {
    int n;
    scanf("%d", &n);
-   int a[n];
-   for (int i = 1; i != n+1; i++){
-      a[i-1] = i;
+   if (n == 1){ 
+      printf("1\n");
+      return 0;
+   } else if (n < 4){
+      printf("NO SOLUTION\n");
+      return 0;
    }
-   //FIXME
-   for (int i = 0; i != n; i++){
-      if (std::abs(a[i+1] - a[i]) == 1 && i+2 < n){
-         //swap
-         int b = a[i+1];
-         a[i+1] = a[i+2];
-         a[i+2] = b;
-      }
+   for (int i = 2; i <= n; i+=2){
+      printf("%d ", i);
    }
-   for (int i = 0; i != n; i++){
-      printf("%d ", a[i]);
+   for (int i = 1; i <= n; i+=2){
+      printf("%d ", i);
    }
    putchar('\n');
 
