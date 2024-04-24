@@ -1,22 +1,25 @@
 #include <bits/stdc++.h>
+#define F first 
+#define S second
 
 typedef long long ll;
-
-struct t {
-   ll s;
-   ll e;
-};
+typedef std::pair<ll, ll> pair;
 
 int main(){
    ll n, a, b;
    scanf("%lld\n", &n);
-   std::vector<t> times;
+   std::vector<pair> t;
    for(ll i=0; i!=n; i++) {
       scanf("%lld %lld", &a, &b);
-      times.push_back({a, b});
+      t.push_back({b, a});
    }
-   std::sort(times.begin(), times.end());
-   ll ans = 0, cur = 0;
-   for(auto& a: times) printf("%lld -> %lld\n", a.s, a.e);
+   std::sort(t.begin(), t.end());
+   ll ans = 0, i=0, cur_end=-1;
+   for(ll i=0; i!=n; i++){
+      if (cur_end <= t[i].second){
+         cur_end = t[i].first;
+         ans++;
+      }
+   }
    printf("%lld\n", ans);
 }
