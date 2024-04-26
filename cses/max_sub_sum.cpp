@@ -1,19 +1,20 @@
 #include <bits/stdc++.h>
 
-typedef long long ll:
+typedef long long ll;
 
 int main() {
-   ll n;
+   ll n, prev = 0, ans = -1e18;
    scanf("%lld", &n);
-   ll a[n], res[n];
+   ll a[n];
+
    for (ll i=0; i!=n; i++) 
       scanf("%lld", &a[i]);
-
-   res[0] = a[0];
-   ll max = 0;
-   for (ll i=1; i!=n; i++) {
-      res[i] = a[i] + res[i-1];
-      if (res[i] > max) max = res[i];
+  
+   for (ll i=0; i!=n; i++) {
+      if (prev+a[i] >= a[i]){
+         prev += a[i]; 
+      } else prev=a[i];
+      if (prev > ans) ans = prev;
    }
-   printf("%lld\n", max);
+   printf("%lld\n", ans);
 }
