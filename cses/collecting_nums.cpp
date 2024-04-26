@@ -1,25 +1,22 @@
 #include <bits/stdc++.h>
+#include <vector>
 #define FOR(n,i) for(ll i=0; i!=n; i++)
+#define num first 
+#define index second
 
 typedef long long ll;
 
 int main(){
-   ll n; scanf("%lld", &n);
-   ll a[n], max = 0;
+   ll n, b; scanf("%lld", &n);
+   std::vector<std::pair<ll, ll>> a;
    FOR(n, i){
-      scanf("%lld", &a[i]);
-      if (a[i] > max) max = a[i];
+      scanf("%lld", &b);
+      a.push_back({b, i});
    }
-   ll t = 1, cnt=0;
-   while (t < max){
-      FOR(n, i){
-         if (a[i] == t){
-            //TODO: check if there is a number t ahead?
-            cnt++;
-            t++;
-            break;
-         }
-      }
+   std::sort(a.begin(), a.end());
+   ll cnt=0, prev = 0;
+   FOR(n, i){
+      if (a[i].index > i+1) cnt++;
    }
    printf("%lld\n", cnt);
 }
