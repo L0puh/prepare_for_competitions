@@ -2,7 +2,7 @@
 #include <utility>
 #include <vector>
 
-std::vector<int> array = {3, 2, 4};
+std::vector<int> array = {-1, -1, -1};
 int x = 9;
 const size_t size = 9+1;
 
